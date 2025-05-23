@@ -1,30 +1,70 @@
-# PSFree version 1.5.0
+# PSFree Host 9.00 - PlayStation Pulse Edition
 
-Lapse Kex ported to 9.00 - Still WIP
+A WebKit exploit implementation for PlayStation 4 firmware 9.00, providing arbitrary read/write capabilities through CVE-2022-22620. This version is maintained and distributed by the **Telegram PlayStation Pulse** community.
 
-Very fast and reliable but can KP :P
+## 🎯 Overview
 
-- Needs a bin loader on Port 9020.
-- Some performance Tweaks??.
-- Add sysveri Patch
-  
-PR are welcome 
+PSFree is a browser-based exploit that targets WebKit vulnerabilities in PlayStation 4 systems running firmware 9.00. It establishes memory corruption primitives that can be used as a foundation for homebrew execution and system modifications.
 
-PSFree is a collection of exploits for the PS4 console. The main focus of the 
-repo is for the PS4 but we try to make things portable to PS5.
+## 🔧 Technical Details
 
-* Exploits
-  * PSFree: src/psfree.mjs
-  * Lapse (kernel): src/scripts/lapse.mjs
+- **Target**: PlayStation 4 firmware 9.00
+- **Vulnerability**: CVE-2022-22620 (WebKit Use-After-Free)
+- **Method**: SerializedScriptValue exploitation via fastMalloc heap manipulation
+- **Capabilities**: Arbitrary memory read/write primitives
 
-Donation (Monero/XMR):
-86Fk3X9AE94EGKidzRbvyiVgGNYD3qZnuKNq1ZbsomFWXHYm6TtAgz9GNGitPWadkS3Wr9uXoT29U1SfdMtJ7QNKQpW1CVS
+## 🚀 Usage
 
-# COPYRIGHT AND AUTHORS:
-AGPL-3.0-or-later (see src/COPYING). This repo belongs to the group
-`anonymous`. We refer to anonymous contributors as "anonymous" as well.
+1. **Setup**: Host the files on a web server accessible by your PS4
+2. **Access**: Navigate to the hosted URL using the PS4 browser
+3. **Execute**: The exploit runs automatically upon page load
+4. **Cache**: Use `cache.html` for offline functionality
 
-# CREDITS:
-* anonymous for PS4 firmware kernel dumps
-* Check the appropriate files for any **extra** contributors. Unless otherwise
-  stated, everything here can also be credited to us.
+## 📁 Project Structure
+
+```
+├── index.html          # Main exploit interface
+├── cache.html          # Offline cache version
+├── psfree.mjs          # Core WebKit exploit implementation
+├── lapse.mjs           # Kernel exploit loader
+├── payload.js          # Payload execution handler
+├── module/             # Exploit utility modules
+├── kpatch/             # Kernel patches for 9.00
+└── rop/                # Return-Oriented Programming chains
+```
+
+## ⚠️ Important Notes
+
+- **Educational Purpose**: This software is intended for research and educational purposes
+- **Firmware Specific**: Only compatible with PS4 firmware 9.00
+- **No Warranty**: Use at your own risk - no guarantees provided
+- **Legal Compliance**: Ensure compliance with local laws and regulations
+
+## 🏆 Credits
+
+- **PlayStation Pulse Community**: [Telegram Group](https://t.me/PlayStation_Puls)
+- **Author**: [BlackArch](https://t.me/sudoBlackArch)
+- **Special Thanks**: [kmeps4](https://github.com/kmeps4) and the PS4 development community
+- **Original PSFree**: Anonymous contributors from the homebrew scene
+
+## 📜 License
+
+This project is licensed under the GNU Affero General Public License v3.0 (AGPL-3.0). See the [LICENSE](LICENSE) file for full details.
+
+## 🔗 Community
+
+Join our Telegram community for support, updates, and discussions:
+- **Main Group**: [@PlayStation_Puls](https://t.me/PlayStation_Puls)
+- **Developer**: [@sudoBlackArch](https://t.me/sudoBlackArch)
+
+## ⚡ Features
+
+- **Modern UI**: Clean, responsive interface optimized for PS4 browser
+- **Progress Tracking**: Real-time exploit progress visualization
+- **Console Logging**: Detailed execution logs for debugging
+- **Offline Support**: Cached version for offline usage
+- **Alert System**: User-friendly status notifications
+
+---
+
+*Developed with ❤️ by the PlayStation Pulse community*
