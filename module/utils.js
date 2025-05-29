@@ -52,6 +52,13 @@ export function align(a, alignment) {
 }
 
 export async function send(url, buffer, file_name, onload=() => {}) {
+    // Prevent remote URL access - only allow local URLs
+    if (url.startsWith('http://') || url.startsWith('https://')) {
+        if (!url.startsWith(window.location.origin)) {
+            throw Error(`Remote URL access blocked: ${url}`);
+        }
+    }
+    
     const file = new File(
         [buffer],
         file_name,

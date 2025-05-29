@@ -1553,6 +1553,13 @@ function make_kernel_arw(pktopts_sds, dirty_sd, k100_addr, kernel_addr, sds) {
 // FUNCTIONS FOR STAGE: PATCH KERNEL
 
 async function get_patches(url) {
+    // Prevent remote URL access - only allow local URLs
+    if (url.startsWith('http://') || url.startsWith('https://')) {
+        if (!url.startsWith(window.location.origin)) {
+            throw Error(`Remote URL access blocked: ${url}`);
+        }
+    }
+    
     const response = await fetch(url);
     if (!response.ok) {
         throw Error(
