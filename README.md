@@ -6,7 +6,7 @@ A modern, redesigned PlayStation 4 jailbreak host for firmware 9.xx with GoldHEN
 
 - **Modern Dark Theme**: Sleek PlayStation-inspired design with gradient backgrounds
 - **PS4 Browser Optimized**: Lightweight and fast-loading interface designed specifically for PS4 Fat and higher
-- **GoldHEN v2.4b18.5**: Latest GoldHEN payload integration
+- **GoldHEN v2.4b18.6**: Latest GoldHEN payload integration
 - **13 Homebrew Payloads**: Comprehensive collection of essential PS4 homebrew tools
 - **PSFree Fix**: Dedicated payload to resolve common PSFree exploit issues
 - **Dual Loading System**: Local GoldHEN BinLoader support with online fallback
@@ -120,7 +120,7 @@ Join our Telegram community for:
 ### v2.0
 - Complete UI/UX redesign with modern dark theme
 - Optimized for PS4 browser performance
-- Updated to GoldHEN v2.4b18.5
+- Updated to GoldHEN v2.4b18.6
 - Improved cache system with PSPulse.manifest
 - Responsive design for all screen sizes
 - Enhanced payload organization and descriptions
