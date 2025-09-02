@@ -239,7 +239,7 @@
         </div>
         
         <div class="progress-container">
-            <div class="progress-label" id="progress">Loading.. Please Wait !!</div>
+            <div class="progress-label" id="progress">Loading.. Please Wait !!!</div>
             <div class="progress-wrapper">
                 <div class="progress-bar" id="myProgress">
                     <div class="progress-fill" id="myBar"></div>
@@ -272,12 +272,12 @@
             document.getElementById("progressText").innerHTML = progress + "%";
         };
         window.applicationCache.oncached=function(){
-            document.getElementById("progress").innerHTML="Page Cached Successfully!!";
+            document.getElementById("progress").innerHTML="Page Cached Successfully!!!";
             localStorage.is755BCached=true;
             setTimeout(function(){window.location.reload("myBar"); }, 1500);
         };
         window.applicationCache.onupdateready=function(){
-            document.getElementById("progress").innerHTML="Update Cache Successfully!!";
+            document.getElementById("progress").innerHTML="Update Cache Successfully!!!";
             localStorage.is755BCached=true;
             setTimeout(function(){window.location.reload("myBar"); }, 1500);
         };
