@@ -1,17 +1,19 @@
 # PlayStation Pulse PSFree Host 9.xx
 
-A modern, redesigned PlayStation 4 jailbreak host for firmware 9.xx with GoldHEN support. This project is a complete visual overhaul of the original PSFree exploit, featuring a sleek dark theme optimized for PS4 browsers and an extensive collection of homebrew payloads.
+A modern, redesigned PlayStation 4 jailbreak host for firmware 9.xx with multi-version GoldHEN support. This project features a complete visual overhaul of the original PSFree exploit, with a sleek dark theme optimized for PS4 browsers, version selection system, and an extensive collection of homebrew payloads.
 
 ## 🎮 Features
 
-- **Modern Dark Theme**: Sleek PlayStation-inspired design with gradient backgrounds
+- **Version Selection System**: Choose between GoldHEN v2.4b18.6 (Latest) or v2.4b18.5 (Stable)
+- **Modern Dark Theme**: Sleek PlayStation-inspired design with gradient backgrounds and purple/pink accents
 - **PS4 Browser Optimized**: Lightweight and fast-loading interface designed specifically for PS4 Fat and higher
-- **GoldHEN v2.4b18.6**: Latest GoldHEN payload integration
+- **Dual GoldHEN Support**: Both latest and stable GoldHEN versions with separate caching systems
 - **13 Homebrew Payloads**: Comprehensive collection of essential PS4 homebrew tools
 - **PSFree Fix**: Dedicated payload to resolve common PSFree exploit issues
 - **Dual Loading System**: Local GoldHEN BinLoader support with online fallback
-- **Offline Cache**: Fast loading with application cache support
-- **Responsive Design**: Works on all screen sizes
+- **Isolated Caching**: Each GoldHEN version caches only its required files
+- **Auto-Activation**: Automatic exploit activation in offline mode
+- **Responsive Design**: Works on all screen sizes with touch-friendly interface
 
 ## 🔧 Supported Firmware Versions
 
@@ -49,9 +51,19 @@ A modern, redesigned PlayStation 4 jailbreak host for firmware 9.xx with GoldHEN
 
 1. **Setup Web Server**: Host these files on a local web server or use online hosting
 2. **Access via PS4**: Open the PS4 browser and navigate to your host URL
-3. **Cache Loading**: The first visit will cache all files for offline use
-4. **Jailbreak**: The exploit will automatically run when you visit the main page
-5. **Load Payloads**: Once jailbroken, select desired payloads from the interface
+3. **Version Selection**: Choose your preferred GoldHEN version:
+   - **GoldHEN v2.4b18.6 (Latest)**: Newest features and improvements
+   - **GoldHEN v2.4b18.5 (Stable)**: Proven reliability and stability
+4. **Cache Loading**: Selected version files will be cached for offline use
+5. **Auto-Jailbreak**: The exploit automatically activates in offline mode
+6. **Load Payloads**: Once jailbroken, select desired payloads from the interface
+
+### 🔄 Version Selection Benefits
+
+- **Isolated Systems**: Each version has its own complete file set and cache
+- **No Cross-Contamination**: Switching versions won't affect cached files
+- **Optimized Loading**: Only necessary files are cached per version
+- **Fallback Options**: Use stable version if latest has issues
 
 ### 🔄 Payload Loading Methods
 
@@ -62,21 +74,26 @@ A modern, redesigned PlayStation 4 jailbreak host for firmware 9.xx with GoldHEN
 
 ## 🎨 Design Features
 
+- **Version Selection Interface**: Beautiful card-based version selector with hover effects
 - **Color Scheme**: Dark gradient backgrounds with purple, blue, and pink accents
 - **Typography**: Modern Inter font family for excellent readability
-- **Animations**: Subtle floating geometric shapes for visual appeal
+- **Interactive Elements**: Card-based design with full-area click functionality
+- **Animations**: Subtle floating geometric shapes and smooth transitions
 - **Compact Layout**: Optimized for quick navigation and minimal scrolling
 - **Glassmorphism**: Backdrop blur effects for modern UI aesthetics
+- **Visual Feedback**: Color-coded version badges and hover states
 
 ## 🛠️ Technical Details
 
 - **Exploit Base**: PSFree 1.5rc1 with Lapse Auto GoldHEN
-- **Cache System**: Application cache for offline functionality
+- **Multi-Version Architecture**: Separate file sets for each GoldHEN version
+- **Cache System**: Dual application cache manifests (PSPulse.manifest & PSPulse5.manifest)
 - **Browser Compatibility**: Optimized for PS4's WebKit-based browser
 - **Performance**: Minimal resource usage for stable operation on PS4 hardware
 - **Payload System**: Dual-mode loading with automatic fallback mechanisms
 - **Error Handling**: Comprehensive error catching and user feedback
 - **Memory Management**: Optimized payload execution through thread management
+- **Offline Auto-Activation**: Automatic exploit execution without user intervention
 
 ## 🎯 Browser Compatibility
 
@@ -109,7 +126,16 @@ Join our Telegram community for:
 
 ## 🔄 Changelog
 
-### v3.0 (Current)
+### v4.0 (Current)
+- **🆕 Version Selection System**: Choose between GoldHEN v2.4b18.6 (Latest) or v2.4b18.5 (Stable)
+- **🎨 Enhanced UI Design**: Beautiful card-based version selector with purple/pink color scheme
+- **🔧 Isolated Caching**: Separate cache systems for each GoldHEN version
+- **⚡ Auto-Activation**: Fixed offline mode auto-activation for both versions
+- **🎯 Click-Friendly Interface**: Full-area clickable cards without unnecessary buttons
+- **📱 Touch Optimized**: Improved mobile and PS4 browser compatibility
+- **🔄 Smart File Management**: Version-specific file sets prevent conflicts
+
+### v3.0
 - **Major Payload Overhaul**: Added 13 essential homebrew payloads
 - **PSFree Fix**: Dedicated payload to resolve exploit issues
 - **Dual Loading System**: GoldHEN BinLoader support with online fallback
