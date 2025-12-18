@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PlayStation Pulse PSFree Host 9.xx - Version Selection</title>
+    <title>PlayStation Pulse PSFree Host 7.xx-9.xx - Version Selection</title>
     <style>
         * {
             margin: 0;
@@ -284,7 +284,7 @@
     
     <div class="container">
         <div class="header-section">
-            <h1 class="main-title">PlayStation Pulse PSFree Host 9.xx</h1>
+            <h1 class="main-title">PlayStation Pulse PSFree Host 7.xx-9.xx</h1>
             <p class="subtitle">Choose Your GoldHEN Version</p>
             <p class="description">Select the GoldHEN version you want to cache and use. Each version has different features and compatibility options.</p>
         </div>
@@ -292,10 +292,10 @@
         <div class="version-selection">
             <div class="section-title">Available Versions</div>
             <div class="version-grid">
-                <div class="version-card latest" onclick="selectVersion('v2.4b18.6')" tabindex="0" data-version="latest">
+                <div class="version-card latest" onclick="selectVersion('v2.4b18.7')" tabindex="0" data-version="latest">
                     <div class="version-badge latest">Latest</div>
                     <div class="version-title">GoldHEN</div>
-                    <div class="version-number">v2.4b18.6</div>
+                    <div class="version-number">v2.4b18.7</div>
                     <div class="version-description">
                         The latest version with improved stability, new features, and enhanced compatibility. 
                         Recommended for most users seeking the best experience.
@@ -331,7 +331,7 @@
             localStorage.setItem('selectedGoldHENVersion', version);
             
             // Redirect to appropriate cache page based on version
-            if (version === 'v2.4b18.6') {
+            if (version === 'v2.4b18.7') {
                 window.location.href = 'cache.html';
             } else if (version === 'v2.4b18.5') {
                 window.location.href = 'cache5.html';

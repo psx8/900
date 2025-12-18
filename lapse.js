@@ -41,6 +41,12 @@ import * as rop from './module/chain.js';
 import * as config from './config.js';
 
 // static imports for firmware configurations
+import * as fw_ps4_700 from "./lapse/700.js";
+import * as fw_ps4_750 from "./lapse/750.js";
+import * as fw_ps4_751 from "./lapse/751.js";
+import * as fw_ps4_800 from "./lapse/800.js";
+import * as fw_ps4_850 from "./lapse/850.js";
+import * as fw_ps4_852 from "./lapse/852.js";
 import * as fw_ps4_900 from "./lapse/900.js";
 import * as fw_ps4_903 from "./lapse/903.js";
 import * as fw_ps4_950 from "./lapse/950.js";
@@ -69,18 +75,44 @@ const [is_ps4, version] = (() => {
 
 const fw_config = (() => {
     if (is_ps4) {
-    if (0x900 <= config.target && config.target < 0x903) {
-       return fw_ps4_900;
+        // 7.00, 7.01, 7.02
+        if (0x700 <= config.target && config.target < 0x750) {
+            return fw_ps4_700;
+        }
+        // 7.50
+        if (0x750 <= config.target && config.target < 0x751) {
+            return fw_ps4_750;
+        }
+        // 7.51, 7.55
+        if (0x751 <= config.target && config.target < 0x800) {
+            return fw_ps4_751;
+        }
+        // 8.00, 8.01, 8.03
+        if (0x800 <= config.target && config.target < 0x850) {
+            return fw_ps4_800;
+        }
+        // 8.50
+        if (0x850 <= config.target && config.target < 0x852) {
+            return fw_ps4_850;
+        }
+        // 8.52
+        if (0x852 <= config.target && config.target < 0x900) {
+            return fw_ps4_852;
+        }
+        // 9.00
+        if (0x900 <= config.target && config.target < 0x903) {
+            return fw_ps4_900;
+        }
+        // 9.03, 9.04
+        if (0x903 <= config.target && config.target < 0x950) {
+            return fw_ps4_903;
+        }
+        // 9.50, 9.51, 9.60
+        if (0x950 <= config.target && config.target < 0x1000) {
+            return fw_ps4_950;
+        }
     }
-
-    if (0x903 <= config.target && config.target < 0x950) {
-       return fw_ps4_903;
-    }
-
-    if (0x950 <= config.target && config.target < 0x1000) {
-       return fw_ps4_950;
-    }
-   }
+    throw RangeError(`unsupported firmware: ${hex(config.target)}`);
 })();
 
 const pthread_offsets = fw_config.pthread_offsets;
@@ -89,6 +121,7 @@ const off_cpuid_to_pcpu = fw_config.off_cpuid_to_pcpu;
 const off_sysent_661 = fw_config.off_sysent_661;
 const jmp_rsi = fw_config.jmp_rsi;
 const patch_elf_loc = fw_config.patch_elf_loc;
+const patch_offset = fw_config.patch_offset;
 
 var nogc = [];
 function malloc(sz) {
@@ -1634,8 +1667,8 @@ async function patch_kernel(kbase, kmem, p_ucred, restore_info) {
 
     const buf = await get_patches(patch_elf_loc);
     // FIXME handle .bss segment properly
-    // assume start of loadable segments is at offset 0x1000
-    const patches = new View1(await buf, 0x1000);
+    // Use patch_offset from fw_config (0x1000 for ELF, 0x0 for raw binary)
+    const patches = new View1(await buf, patch_offset);
     let map_size = patches.size;
     const max_size = 0x10000000;
     if (map_size > max_size) {

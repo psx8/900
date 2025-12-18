@@ -1,10 +1,11 @@
-# PlayStation Pulse PSFree Host 9.xx
+# PlayStation Pulse PSFree Host 7.xx-9.xx
 
-A modern, redesigned PlayStation 4 jailbreak host for firmware 9.xx with multi-version GoldHEN support. This project features a complete visual overhaul of the original PSFree exploit, with a sleek dark theme optimized for PS4 browsers, version selection system, and an extensive collection of homebrew payloads.
+A modern, redesigned PlayStation 4 jailbreak host for firmware 7.xx-9.xx with multi-version GoldHEN support. This project features a complete visual overhaul of the original PSFree exploit, with a sleek dark theme optimized for PS4 browsers, version selection system, and an extensive collection of homebrew payloads.
 
 ## 🎮 Features
 
-- **Version Selection System**: Choose between GoldHEN v2.4b18.6 (Latest) or v2.4b18.5 (Stable)
+- **Extended Firmware Support**: Now supports PS4 firmware 7.00 through 9.60
+- **Version Selection System**: Choose between GoldHEN v2.4b18.7 (Latest) or v2.4b18.5 (Stable)
 - **Modern Dark Theme**: Sleek PlayStation-inspired design with gradient backgrounds and purple/pink accents
 - **PS4 Browser Optimized**: Lightweight and fast-loading interface designed specifically for PS4 Fat and higher
 - **Dual GoldHEN Support**: Both latest and stable GoldHEN versions with separate caching systems
@@ -17,12 +18,17 @@ A modern, redesigned PlayStation 4 jailbreak host for firmware 9.xx with multi-v
 
 ## 🔧 Supported Firmware Versions
 
-- PlayStation 4 Firmware 9.00
-- PlayStation 4 Firmware 9.03
-- PlayStation 4 Firmware 9.04
-- PlayStation 4 Firmware 9.50
-- PlayStation 4 Firmware 9.51
-- PlayStation 4 Firmware 9.60
+### PlayStation 4 Firmware 7.xx
+- 7.00, 7.01, 7.02
+- 7.50, 7.51, 7.55
+
+### PlayStation 4 Firmware 8.xx
+- 8.00, 8.01, 8.03
+- 8.50, 8.52
+
+### PlayStation 4 Firmware 9.xx
+- 9.00, 9.03, 9.04
+- 9.50, 9.51, 9.60
 
 ## 📦 Included Payloads (13 Total)
 
@@ -52,7 +58,7 @@ A modern, redesigned PlayStation 4 jailbreak host for firmware 9.xx with multi-v
 1. **Setup Web Server**: Host these files on a local web server or use online hosting
 2. **Access via PS4**: Open the PS4 browser and navigate to your host URL
 3. **Version Selection**: Choose your preferred GoldHEN version:
-   - **GoldHEN v2.4b18.6 (Latest)**: Newest features and improvements
+   - **GoldHEN v2.4b18.7 (Latest)**: Newest features and improvements
    - **GoldHEN v2.4b18.5 (Stable)**: Proven reliability and stability
 4. **Cache Loading**: Selected version files will be cached for offline use
 5. **Auto-Jailbreak**: The exploit automatically activates in offline mode
@@ -85,7 +91,7 @@ A modern, redesigned PlayStation 4 jailbreak host for firmware 9.xx with multi-v
 
 ## 🛠️ Technical Details
 
-- **Exploit Base**: PSFree 1.5rc1 with Lapse Auto GoldHEN
+- **Exploit Base**: PSFree 1.6 with Lapse Auto GoldHEN
 - **Multi-Version Architecture**: Separate file sets for each GoldHEN version
 - **Cache System**: Dual application cache manifests (PSPulse.manifest & PSPulse5.manifest)
 - **Browser Compatibility**: Optimized for PS4's WebKit-based browser
@@ -126,7 +132,16 @@ Join our Telegram community for:
 
 ## 🔄 Changelog
 
-### v4.0 (Current)
+### v5.0 (Current)
+- **🆕 Extended Firmware Support**: Added support for PS4 firmware 7.00-8.52
+- **🔧 New Kernel Patches**: Added 700.bin, 750.bin, 800.bin, 850.bin for 7.xx-8.xx
+- **📝 New Lapse Configs**: Added firmware offset files for 7.00-8.52
+- **⚡ New ROP Chains**: Added ROP gadget chains for 7.xx-8.xx firmwares
+- **🎯 Dynamic Patch Loading**: Automatic detection of raw binary vs ELF format
+- **📦 Updated GoldHEN**: Now includes GoldHEN v2.4b18.7 (Latest)
+- **🔄 Manifest Updates**: All new files added to cache manifests
+
+### v4.0
 - **🆕 Version Selection System**: Choose between GoldHEN v2.4b18.6 (Latest) or v2.4b18.5 (Stable)
 - **🎨 Enhanced UI Design**: Beautiful card-based version selector with purple/pink color scheme
 - **🔧 Isolated Caching**: Separate cache systems for each GoldHEN version

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PlayStation Pulse PSFree Host 9.xx</title>
+    <title>PlayStation Pulse PSFree Host 7.xx-9.xx</title>
     <style>
         * {
             margin: 0;
@@ -313,9 +313,9 @@
     
     <div class="container">
         <div class="header-section">
-            <h1 class="main-title">PlayStation Pulse PSFree Host 9.xx</h1>
+            <h1 class="main-title">PlayStation Pulse PSFree Host 7.xx-9.xx</h1>
             <p class="subtitle">Online and Offline Lapse Auto GoldHen by Telegram PlayStation Pulse</p>
-            <p class="version-info">PSfree1.5rc1 FW 9.xx GoldHEN v2.4b18.6</p>
+            <p class="version-info">PSfree1.6 FW 7.xx-9.xx GoldHEN v2.4b18.7</p>
             <div class="fw-display">FW - <span id="PS4fw"></span></div>
         </div>
         
@@ -429,6 +429,20 @@
     <script>
         // Firmware detection
         UA = navigator.userAgent.substring(navigator.userAgent.indexOf("6.72 (") + 28, navigator.userAgent.indexOf(") Apple"));
+        // 7.xx
+        if (UA == "layStation 4/7.00") UA = "7.00";
+        if (UA == "layStation 4/7.01") UA = "7.01";
+        if (UA == "layStation 4/7.02") UA = "7.02";
+        if (UA == "layStation 4/7.50") UA = "7.50";
+        if (UA == "layStation 4/7.51") UA = "7.51";
+        if (UA == "layStation 4/7.55") UA = "7.55";
+        // 8.xx
+        if (UA == "layStation 4/8.00") UA = "8.00";
+        if (UA == "layStation 4/8.01") UA = "8.01";
+        if (UA == "layStation 4/8.03") UA = "8.03";
+        if (UA == "layStation 4/8.50") UA = "8.50";
+        if (UA == "layStation 4/8.52") UA = "8.52";
+        // 9.xx
         if (UA == "layStation 4/9.00") UA = "9.00";
         if (UA == "layStation 4/9.03") UA = "9.03";
         if (UA == "layStation 4/9.04") UA = "9.04";
@@ -436,8 +450,10 @@
         if (UA == "layStation 4/9.51") UA = "9.51";
         if (UA == "layStation 4/9.60") UA = "9.60";
         if (UA == "layStation 4/99.99") UA = "99.99";
-        if (UA != "9.00" && UA != "9.03" && UA != "9.04" && UA != "9.50" && UA != "9.51" && UA != "9.60" && UA != "99.99") 
-            alert("This Is For PS4 FW9.xx Only!");
+        
+        var supportedFW = ["7.00","7.01","7.02","7.50","7.51","7.55","8.00","8.01","8.03","8.50","8.52","9.00","9.03","9.04","9.50","9.51","9.60","99.99"];
+        if (!supportedFW.includes(UA)) 
+            alert("This Is For PS4 FW 7.xx - 9.xx Only!");
         document.getElementById("PS4fw").innerHTML = "" + UA + "";
 
         // Statistics initialization

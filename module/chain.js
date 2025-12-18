@@ -553,13 +553,33 @@ function load_fw_specific(version) {
         throw RangeError("PS4 firmwares < 7.00 isn't supported");
     }
 
+    // 7.00, 7.01, 7.02
+    if (0x700 <= value && value < 0x750) {
+      return import("../rop/700.js");
+    }
+
+    // 7.50, 7.51, 7.55
+    if (0x750 <= value && value < 0x800) {
+      return import("../rop/750.js");
+    }
+
+    // 8.00, 8.01, 8.03
+    if (0x800 <= value && value < 0x850) {
+      return import("../rop/800.js");
+    }
+
+    // 8.50, 8.52
+    if (0x850 <= value && value < 0x900) {
+      return import("../rop/850.js");
+    }
+
+    // 9.00, 9.03, 9.04
     if (0x900 <= value && value < 0x950) {
-      // 9.00, 9.03, 9.04
       return import("../rop/900.js");
     } 
     
+    // 9.50, 9.51, 9.60
     if (0x950 <= value && value < 0x1000) {
-      // 9.50, 9.51, 9.60
       return import("../rop/950.js");
     }
 

@@ -33,3 +33,4 @@ export const off_sysent_661 = 0x1103f00;
 export const jmp_rsi = 0x5325b;
 
 export const patch_elf_loc = "./kpatch/903.elf"; // Relative to `../../lapse.mjs`
+export const patch_offset = 0x1000; // ELF format, skip header
